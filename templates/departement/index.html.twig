@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les chiffres du COVID-19 par départements
+{% endblock %}
+
+{% block body %}
+    <div class="album py-5">
+        <div class="container">
+            <h1 class="mb-5">Les chiffres du COVID-19 par département</h1>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for departements in departements %}
+                    <div class="col">
+                        <div class="card shadow-lg h-100 m-2">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ departements.lib_dep }}</h5>
+                                <p class="card-text">Actuellement en réanimation : <span class="badge bg-secondary">{{ departements.incid_rea }}</span></p>
+                                <p class="card-text">Actuellement hospitalisée : <span class="badge bg-secondary">{{ departements.hosp }}</span></p>
+                                <p class="card-text">Retour à domicile : <span class="badge bg-secondary">{{ departements.incid_rad }}</span></p>
+                                <a href="#" class="btn btn-secondary" role="button" aria-pressed="true">Ministère de la santé</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

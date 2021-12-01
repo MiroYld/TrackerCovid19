@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les chiffres du COVID-19 en France
+{% endblock %}
+
+{% block body %}
+    <div class="album py-5" id="department">
+        <div class="container">
+            <h1 class="mb-5">Les chiffres du COVID-19 en France</h1>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre d’hospitalisations</h5>
+                            <p class="card-text">Nombre de personnes actuellement hospitalisée</p>
+                        </div>
+                        <h3 class="card-footer bg-warning text-dark mx-2 rounded-pill">{{ data.0.hosp }}</h3>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre de Réa</h5>
+                            <p class="card-text">Nombre de personnes actuellement en réanimation</p>
+                        </div>
+                        <h3 class="card-footer bg-warning text-dark mx-2 rounded-pill">{{ data.0.rea }}</h3>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre total de décès</h5>
+                            <p class="card-text">Nombre de personnes décédés depuis le début de la pandémie</p>
+                        </div>
+                        <h3 class="card-footer bg-dark text-light mx-2 rounded-pill">{{ data.0.dchosp + data.0.esms_dc }}</h3>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Nombre de nouveaux patients</h5>
+                            <p class="card-text">Nouveaux patients admis en réanimation en 24H</p>
+                        </div>
+                        <h3 class="card-footer bg-info text-dark mx-2 rounded-pill">{{ data.0.incid_rea }}</h3>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Retours à domicile</h5>
+                            <p class="card-text">Nouveaux retours à domicile en 24h.</p>
+                        </div>
+                        <h3 class="card-footer bg-success text-dark mx-2 rounded-pill">{{ data.0.incid_rad }}</h3>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Source des données</h5>
+                            <p class="card-text">Ministère de la santé:</p>
+                        </div>
+                        <h3 class="card-footer bg-secondary text-grey mx-2 rounded-pill">{{ data.0.date }}</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="card  shadow-lg">
+        <div class="card-body">
+            {{ render_chart(chart) }}
+        </div>
+    </div>
+{% endblock %}
