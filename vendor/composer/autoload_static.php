@@ -10,19 +10,19 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '53c7be3308b5aa229d03a4dfcf6ca18d' => __DIR__ . '/..' . '/symfony/intl/Resources/functions.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '53c7be3308b5aa229d03a4dfcf6ca18d' => __DIR__ . '/..' . '/symfony/intl/Resources/functions.php',
-        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -125,10 +125,12 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
+            'PUGX\\AutocompleterBundle\\' => 25,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
+            'MapUx\\' => 6,
         ),
         'L' => 
         array (
@@ -168,8 +170,8 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -507,9 +509,17 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         array (
             0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
+        'PUGX\\AutocompleterBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'MapUx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/frvaillant/mapux',
         ),
         'Laminas\\Code\\' => 
         array (
@@ -569,9 +579,9 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
-            2 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+            2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
         ),
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
@@ -1874,6 +1884,45 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         'Laminas\\Code\\Reflection\\ReflectionInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Reflection/ReflectionInterface.php',
         'Laminas\\Code\\Scanner\\DocBlockScanner' => __DIR__ . '/..' . '/laminas/laminas-code/src/Scanner/DocBlockScanner.php',
         'Locale' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/Locale.php',
+        'MapUx\\Builder\\IconsPictureBuilder' => __DIR__ . '/..' . '/frvaillant/mapux/Builder/IconsPictureBuilder.php',
+        'MapUx\\Builder\\MapBuilder' => __DIR__ . '/..' . '/frvaillant/mapux/Builder/MapBuilder.php',
+        'MapUx\\Builder\\MapBuilderInterface' => __DIR__ . '/..' . '/frvaillant/mapux/Builder/MapBuilderInterface.php',
+        'MapUx\\Command\\InstallAssetsCommand' => __DIR__ . '/..' . '/frvaillant/mapux/Command/InstallAssetsCommand.php',
+        'MapUx\\Command\\ProjectDirProvider' => __DIR__ . '/..' . '/frvaillant/mapux/Command/ProjectDirProvider.php',
+        'MapUx\\DependencyInjection\\MapUxCommandExtension' => __DIR__ . '/..' . '/frvaillant/mapux/DependencyInjection/MapUxCommandExtension.php',
+        'MapUx\\DependencyInjection\\MapUxExtension' => __DIR__ . '/..' . '/frvaillant/mapux/DependencyInjection/MapUxExtension.php',
+        'MapUx\\Factory\\ClassFactory' => __DIR__ . '/..' . '/frvaillant/mapux/Factory/ClassFactory.php',
+        'MapUx\\MapUxBundle' => __DIR__ . '/..' . '/frvaillant/mapux/MapUxBundle.php',
+        'MapUx\\Model\\AdjustableGrid' => __DIR__ . '/..' . '/frvaillant/mapux/Model/AdjustableGrid.php',
+        'MapUx\\Model\\Circle' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Circle.php',
+        'MapUx\\Model\\GeojsonLayer' => __DIR__ . '/..' . '/frvaillant/mapux/Model/GeojsonLayer.php',
+        'MapUx\\Model\\Grid' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Grid.php',
+        'MapUx\\Model\\Icon' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Icon.php',
+        'MapUx\\Model\\IconsDataProvider' => __DIR__ . '/..' . '/frvaillant/mapux/Model/IconsDataProvider.php',
+        'MapUx\\Model\\IgnLayer' => __DIR__ . '/..' . '/frvaillant/mapux/Model/IgnLayer.php',
+        'MapUx\\Model\\Layer' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Layer.php',
+        'MapUx\\Model\\Legend' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Legend.php',
+        'MapUx\\Model\\Map' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Map.php',
+        'MapUx\\Model\\Marker' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Marker.php',
+        'MapUx\\Model\\Polygon' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Polygon.php',
+        'MapUx\\Model\\Polyline' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Polyline.php',
+        'MapUx\\Model\\Popup' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Popup.php',
+        'MapUx\\Model\\Rectangle' => __DIR__ . '/..' . '/frvaillant/mapux/Model/Rectangle.php',
+        'MapUx\\Model\\ShapeLayer' => __DIR__ . '/..' . '/frvaillant/mapux/Model/ShapeLayer.php',
+        'MapUx\\Services\\ColorConverterTrait' => __DIR__ . '/..' . '/frvaillant/mapux/Services/ColorConverterTrait.php',
+        'MapUx\\Services\\GeoServicesTrait' => __DIR__ . '/..' . '/frvaillant/mapux/Services/GeoServicesTrait.php',
+        'MapUx\\Services\\HtmlBuilder\\HtmlBuilder' => __DIR__ . '/..' . '/frvaillant/mapux/Services/HtmlBuilder/HtmlBuilder.php',
+        'MapUx\\Services\\HtmlBuilder\\HtmlElement' => __DIR__ . '/..' . '/frvaillant/mapux/Services/HtmlBuilder/HtmlElement.php',
+        'MapUx\\Twig\\MapFunctionExtension' => __DIR__ . '/..' . '/frvaillant/mapux/Twig/MapFunctionExtension.php',
+        'MapUx\\tests\\Model\\AdjustableGridTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Model/AdjustableGridTest.php',
+        'MapUx\\tests\\Model\\CircleTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Model/CircleTest.php',
+        'MapUx\\tests\\Model\\GridTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Model/GridTest.php',
+        'MapUx\\tests\\Model\\IconTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Model/IconTest.php',
+        'MapUx\\tests\\Model\\RectangleTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Model/RectangleTest.php',
+        'MapUx\\tests\\Services\\ColorConversionTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Services/ColorConversionTest.php',
+        'MapUx\\tests\\Services\\DistanceCalculatorTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Services/DistanceCalculatorTest.php',
+        'MapUx\\tests\\Services\\HtmlBuilderTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Services/HtmlBuilderTest.php',
+        'MapUx\\tests\\Twig\\TwigFunctionTest' => __DIR__ . '/..' . '/frvaillant/mapux/tests/Twig/TwigFunctionTest.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
@@ -2334,6 +2383,13 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         'PHPUnit\\Util\\Xml\\SuccessfulSchemaDetectionResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/SuccessfulSchemaDetectionResult.php',
         'PHPUnit\\Util\\Xml\\ValidationResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/ValidationResult.php',
         'PHPUnit\\Util\\Xml\\Validator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Validator.php',
+        'PUGX\\AutocompleterBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/DependencyInjection/Configuration.php',
+        'PUGX\\AutocompleterBundle\\DependencyInjection\\PUGXAutocompleterExtension' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/DependencyInjection/PUGXAutocompleterExtension.php',
+        'PUGX\\AutocompleterBundle\\Form\\Transformer\\ObjectToIdTransformer' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/Form/Transformer/ObjectToIdTransformer.php',
+        'PUGX\\AutocompleterBundle\\Form\\Type\\AutocompleteFilterType' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/Form/Type/AutocompleteFilterType.php',
+        'PUGX\\AutocompleterBundle\\Form\\Type\\AutocompleteType' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/Form/Type/AutocompleteType.php',
+        'PUGX\\AutocompleterBundle\\Listener\\FilterSubscriber' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/Listener/FilterSubscriber.php',
+        'PUGX\\AutocompleterBundle\\PUGXAutocompleterBundle' => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src/PUGXAutocompleterBundle.php',
         'PackageVersions\\FallbackVersions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/FallbackVersions.php',
         'PackageVersions\\Installer' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Installer.php',
         'PackageVersions\\Versions' => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions/Versions.php',
@@ -2412,6 +2468,8 @@ class ComposerStaticInit50828e94c0fb6575e21b20a274e0de57
         'PhpParser\\Builder\\ClassConst' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/ClassConst.php',
         'PhpParser\\Builder\\Class_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Class_.php',
         'PhpParser\\Builder\\Declaration' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Declaration.php',
+        'PhpParser\\Builder\\EnumCase' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/EnumCase.php',
+        'PhpParser\\Builder\\Enum_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Enum_.php',
         'PhpParser\\Builder\\FunctionLike' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/FunctionLike.php',
         'PhpParser\\Builder\\Function_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Function_.php',
         'PhpParser\\Builder\\Interface_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder/Interface_.php',

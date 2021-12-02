@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '2e20f8a0c7c1bc9cacdf1edfb2de037456c2e96d',
+        'reference' => '65d517818f817f51042380260ca873573107cf20',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '2e20f8a0c7c1bc9cacdf1edfb2de037456c2e96d',
+            'reference' => '65d517818f817f51042380260ca873573107cf20',
             'dev_requirement' => false,
         ),
         'composer/package-versions-deprecated' => array(
@@ -83,12 +83,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-bundle' => array(
-            'pretty_version' => '2.5.0',
-            'version' => '2.5.0.0',
+            'pretty_version' => '2.5.2',
+            'version' => '2.5.2.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../doctrine/doctrine-bundle',
             'aliases' => array(),
-            'reference' => '4a75cead0bb01cadc57c81cfa7c905e3151ed119',
+            'reference' => '5b77477ba2981a00b423d1bb17084b87eb57a4a5',
             'dev_requirement' => false,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
@@ -190,6 +190,15 @@
             'reference' => '006aa5d32f887a4db4353b13b5b5095613e0611f',
             'dev_requirement' => false,
         ),
+        'frvaillant/mapux' => array(
+            'pretty_version' => '1.1.5',
+            'version' => '1.1.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../frvaillant/mapux',
+            'aliases' => array(),
+            'reference' => 'f6bf964a2033e0ebfbd595b4bc968b7fb449bbae',
+            'dev_requirement' => false,
+        ),
         'laminas/laminas-code' => array(
             'pretty_version' => '4.4.3',
             'version' => '4.4.3.0',
@@ -221,12 +230,12 @@
             ),
         ),
         'nikic/php-parser' => array(
-            'pretty_version' => 'v4.13.1',
-            'version' => '4.13.1.0',
+            'pretty_version' => 'v4.13.2',
+            'version' => '4.13.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
-            'reference' => '63a79e8daa781cac14e5195e63ed8ae231dd10fd',
+            'reference' => '210577fe3cf7badcc5814d99455df46564f3c077',
             'dev_requirement' => true,
         ),
         'ocramius/package-versions' => array(
@@ -439,8 +448,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache-implementation' => array(
@@ -448,6 +457,15 @@
             'provided' => array(
                 0 => '1.0|2.0',
             ),
+        ),
+        'pugx/autocompleter-bundle' => array(
+            'pretty_version' => 'v1.7.0',
+            'version' => '1.7.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../pugx/autocompleter-bundle',
+            'aliases' => array(),
+            'reference' => '90eaf2c52502e6701e620fdef905154f8507ebe8',
+            'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.1',
@@ -873,12 +891,12 @@
             'dev_requirement' => false,
         ),
         'symfony/maker-bundle' => array(
-            'pretty_version' => 'v1.36.3',
-            'version' => '1.36.3.0',
+            'pretty_version' => 'v1.36.4',
+            'version' => '1.36.4.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/maker-bundle',
             'aliases' => array(),
-            'reference' => '0f40c826c0725208c254ddcd3481690e6c7e5047',
+            'reference' => '716eee9c8b10b33e682df1b7d80b9061887e9691',
             'dev_requirement' => true,
         ),
         'symfony/mime' => array(
@@ -936,12 +954,12 @@
             'dev_requirement' => false,
         ),
         'symfony/phpunit-bridge' => array(
-            'pretty_version' => 'v5.3.11',
-            'version' => '5.3.11.0',
+            'pretty_version' => 'v5.4.0',
+            'version' => '5.4.0.0',
             'type' => 'symfony-bridge',
             'install_path' => __DIR__ . '/../symfony/phpunit-bridge',
             'aliases' => array(),
-            'reference' => '7b3637f0ce55c510a0fbe6e4d49b223103b7bf7b',
+            'reference' => '59bbd98ee7aa15b9f75c0fc088c7a5cbf7aa9b5c',
             'dev_requirement' => true,
         ),
         'symfony/polyfill-ctype' => array(

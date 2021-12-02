@@ -88,6 +88,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "frvaillant/mapux": {
+        "version": "1.1.5"
+    },
     "laminas/laminas-code": {
         "version": "4.4.3"
     },
@@ -161,6 +164,9 @@
     },
     "psr/log": {
         "version": "1.1.4"
+    },
+    "pugx/autocompleter-bundle": {
+        "version": "v1.7.0"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"

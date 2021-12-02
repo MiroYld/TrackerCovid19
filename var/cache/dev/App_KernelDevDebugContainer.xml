@@ -22,6 +22,8 @@
       <parameter key="TwigExtraBundle">Twig\Extra\TwigExtraBundle\TwigExtraBundle</parameter>
       <parameter key="WebpackEncoreBundle">Symfony\WebpackEncoreBundle\WebpackEncoreBundle</parameter>
       <parameter key="ChartjsBundle">Symfony\UX\Chartjs\ChartjsBundle</parameter>
+      <parameter key="PUGXAutocompleterBundle">PUGX\AutocompleterBundle\PUGXAutocompleterBundle</parameter>
+      <parameter key="MapUxBundle">MapUx\MapUxBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -75,6 +77,14 @@
       <parameter key="ChartjsBundle" type="collection">
         <parameter key="path">/var/www/html/TrackerCovid19/vendor/symfony/ux-chartjs</parameter>
         <parameter key="namespace">Symfony\UX\Chartjs</parameter>
+      </parameter>
+      <parameter key="PUGXAutocompleterBundle" type="collection">
+        <parameter key="path">/var/www/html/TrackerCovid19/vendor/pugx/autocompleter-bundle</parameter>
+        <parameter key="namespace">PUGX\AutocompleterBundle</parameter>
+      </parameter>
+      <parameter key="MapUxBundle" type="collection">
+        <parameter key="path">/var/www/html/TrackerCovid19/vendor/frvaillant/mapux</parameter>
+        <parameter key="namespace">MapUx</parameter>
       </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
@@ -246,6 +256,8 @@
       <parameter>dev</parameter>
       <parameter>main</parameter>
     </parameter>
+    <parameter key="pugx_autocompleter.autocomplete.class">PUGX\AutocompleterBundle\Form\Type\AutocompleteType</parameter>
+    <parameter key="pugx_autocompleter.filter_autocomplete.class">PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType</parameter>
     <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
@@ -954,6 +966,7 @@
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
+        <argument></argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -961,6 +974,8 @@
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ColorType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
+        <argument>PUGX\AutocompleterBundle\Form\Type\AutocompleteType</argument>
+        <argument>PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\Core\Type\TransformationFailureExtension</argument>
@@ -1363,7 +1378,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.Za9MpXe"/>
+      <argument type="service" id=".service_locator.yVo.0Xg"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2084,6 +2099,8 @@
           <argument>/var/www/html/TrackerCovid19/vendor/twig/extra-bundle/translations</argument>
           <argument>/var/www/html/TrackerCovid19/vendor/symfony/webpack-encore-bundle/src/translations</argument>
           <argument>/var/www/html/TrackerCovid19/vendor/symfony/ux-chartjs/translations</argument>
+          <argument>/var/www/html/TrackerCovid19/vendor/pugx/autocompleter-bundle/translations</argument>
+          <argument>/var/www/html/TrackerCovid19/vendor/frvaillant/mapux/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
@@ -2104,6 +2121,8 @@
             <argument>vendor/twig/extra-bundle/translations</argument>
             <argument>vendor/symfony/webpack-encore-bundle/src/translations</argument>
             <argument>vendor/symfony/ux-chartjs/translations</argument>
+            <argument>vendor/pugx/autocompleter-bundle/translations</argument>
+            <argument>vendor/frvaillant/mapux/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3649,6 +3668,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="chartjs.twig_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="mapux.twig_extension"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -5646,6 +5668,28 @@
     <service id="chartjs.twig_extension" class="Symfony\UX\Chartjs\Twig\ChartExtension">
       <tag name="twig.extension"/>
     </service>
+    <service id="pugx_autocompleter.autocomplete" class="PUGX\AutocompleterBundle\Form\Type\AutocompleteType" public="true">
+      <tag name="form.type" alias="autocomplete"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="pugx_autocompleter.filter_autocomplete" class="PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType" public="true">
+      <tag name="form.type" alias="filter_autocomplete"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="pugx_autocompleter.filter.doctrine_subscriber" class="PUGX\AutocompleterBundle\Listener\FilterSubscriber" public="true">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="mapux.builder" class="MapUx\Builder\MapBuilder"/>
+    <service id="mapux.twig_extension" class="MapUx\Twig\MapFunctionExtension">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="MapUx\Command\InstallAssetsCommand" class="MapUx\Command\InstallAssetsCommand">
+      <tag name="console.command" command="mapux:install"/>
+      <tag name="container.no_preload"/>
+      <call method="setName">
+        <argument>mapux:install</argument>
+      </call>
+    </service>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DepartementController" class="App\Controller\DepartementController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DepartementController" class="App\Controller\DepartementController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DepartementController" class="App\Controller\DepartementController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6057,9 +6101,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.Za9MpXe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yVo.0Xg" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType" type="service_closure" id="pugx_autocompleter.filter_autocomplete"/>
+        <argument key="PUGX\AutocompleterBundle\Form\Type\AutocompleteType" type="service_closure" id="pugx_autocompleter.autocomplete"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -6935,7 +6981,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.En5eE6q"/>
+      <argument type="service" id=".service_locator.YNTQT38"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -7006,6 +7052,7 @@
         <argument key="debug:firewall">security.command.debug_firewall</argument>
         <argument key="security:encode-password">security.command.user_password_encoder</argument>
         <argument key="security:hash-password">security.command.user_password_hash</argument>
+        <argument key="mapux:install">MapUx\Command\InstallAssetsCommand</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -7031,10 +7078,11 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.En5eE6q" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YNTQT38" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service_closure" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
+        <argument key="MapUx\Command\InstallAssetsCommand" type="service_closure" id="MapUx\Command\InstallAssetsCommand"/>
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
         <argument key="console.command.assets_install" type="service_closure" id=".console.command.assets_install.lazy"/>
         <argument key="console.command.cache_clear" type="service_closure" id=".console.command.cache_clear.lazy"/>
@@ -7368,6 +7416,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="Symfony\UX\Chartjs\Builder\ChartBuilderInterface" alias="chartjs.builder"/>
+    <service id="MapUx\Builder\MapBuilderInterface" alias="mapux.builder"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.oWZPnUA"/>
@@ -7391,6 +7440,7 @@
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id=".service_locator.XDGmiR3" alias=".1_ServiceLocator~sy2Zsks"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.anofQPJ"/>
+    <service id=".service_locator.mkWQr1S" alias=".service_locator.yVo.0Xg"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

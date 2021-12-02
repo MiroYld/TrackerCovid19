@@ -33,7 +33,7 @@ class HomeController extends AbstractController
                 'datasets' => [
                     [
                         'label' => 'Confirmed',
-                        'backgroundColor' => 'rgb(120, 161, 187, 0.5)',             
+                        'backgroundColor' => 'rgb(120, 161, 187, 0.5)',
                         'data' => $totalByStatus['confirmed']
                     ],
                     [
